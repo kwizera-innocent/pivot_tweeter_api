@@ -56,8 +56,6 @@ public class Processor implements ItemProcessor<Tweet, Tweet> {
 
     public boolean isDuplicate(Tweet tweet) {
         if(tweets.stream().filter(t -> t.getId() == tweet.getId()).findFirst().isPresent()){
-            System.out.println(tweet.getId());
-            System.out.println("tweet.getId()");
             return true;
         }
         tweets.add(tweet);

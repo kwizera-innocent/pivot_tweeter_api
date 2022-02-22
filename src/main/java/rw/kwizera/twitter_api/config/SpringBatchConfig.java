@@ -49,7 +49,7 @@ public class SpringBatchConfig {
                     ItemWriter<Tweet> itemWriter) {
 
         Step step = stepBuilderFactory.get("ETL-json-loader")
-                        .<Tweet, Tweet>chunk(100)
+                        .<Tweet, Tweet>chunk(1000)
                         .reader(itemReader)
                         .processor(itemProcessor)
                         .writer(itemWriter)

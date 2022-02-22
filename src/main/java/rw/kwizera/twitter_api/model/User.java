@@ -30,7 +30,7 @@ public class User {
     // private int listed_count;
     // private int favourites_count;
     // private int statuses_count;
-    // private String created_at;
+    private String created_at;
     // private String profile_banner_url;
     // private String profile_image_url_https;
     // private boolean default_profile;
@@ -81,7 +81,7 @@ public class User {
         // this.listed_count = listed_count;
         // this.favourites_count = favourites_count;
         // this.statuses_count = statuses_count;
-        // // this.created_at = created_at;
+        this.created_at = created_at;
         // this.profile_banner_url = profile_banner_url;
         // this.profile_image_url_https = profile_image_url_https;
         // this.default_profile = default_profile;
@@ -191,12 +191,12 @@ public class User {
     // public void setStatuses_count(int statuses_count) {
     //     this.statuses_count = statuses_count;
     // }
-    // // public String getCreated_at() {
-    // //     return created_at;
-    // // }
-    // // public void setCreated_at(String created_at) {
-    // //     this.created_at = created_at;
-    // // }
+    public String getCreated_at() {
+        return created_at;
+    }
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
     // public String getProfile_banner_url() {
     //     return profile_banner_url;
     // }

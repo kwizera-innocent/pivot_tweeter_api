@@ -31,10 +31,16 @@ public class DBWriter implements ItemWriter<Tweet> {
     public void write(List<? extends Tweet> tweets) throws Exception{
 
         for(Tweet tweet : tweets) {
-            System.out.println("Data Saved for users: " + tweet.getUser());
+
+            if (tweet.getRetweeted_status() != null)    {
+                userRepository.save(tweet.getRetweeted_status().getUser());
+                entitiesRepository.save(tweet.getRetweeted_status().getEntities());
+                tweetRepository.save(tweet.getRetweeted_status());
+            }
+            // System.out.println("Data Saved for users: " + tweet.getUser());
             userRepository.save(tweet.getUser());
 
-            System.out.println("Data Saved for users: " + tweet.getEntities());
+            // System.out.println("Data Saved for users: " + tweet.getEntities());
             entitiesRepository.save(tweet.getEntities());
 
             System.out.println("Data Saved for Tweets: " + tweets);

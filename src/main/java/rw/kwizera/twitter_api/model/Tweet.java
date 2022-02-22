@@ -34,14 +34,28 @@ public class Tweet {
     // private Coordinates coordinates;
     // private Places place;
     // private Object contributors;
-    private int retweet_count;
-    private int favorite_count;
+    // private int retweet_count;
+    // private int favorite_count;
     @OneToOne
     private Entities entities;
     // private Symbol[] symbols;
     // private Url[] urls;
     // private boolean favorited;
     private boolean retweeted;
+    @OneToOne
+    private Tweet retweeted_status;
+    public long getIn_reply_to_user_id() {
+        return in_reply_to_user_id;
+    }
+    public void setIn_reply_to_user_id(long in_reply_to_user_id) {
+        this.in_reply_to_user_id = in_reply_to_user_id;
+    }
+    public Tweet getRetweeted_status() {
+        return retweeted_status;
+    }
+    public void setRetweeted_status(Tweet retweeted_status) {
+        this.retweeted_status = retweeted_status;
+    }
     // private boolean possibly_sensitive;
     // private String filter_level;
     private String lang;
@@ -128,8 +142,8 @@ public class Tweet {
         // this.coordinates = coordinates;
         // this.place = place;
         // this.contributors = contributors;
-        this.retweet_count = retweet_count;
-        this.favorite_count = favorite_count;
+        // this.retweet_count = retweet_count;
+        // this.favorite_count = favorite_count;
         this.entities = entities;
         // this.symbols = symbols;
         // this.urls = urls;
@@ -178,18 +192,18 @@ public class Tweet {
     // public void setContributors(Object contributors) {
     //     this.contributors = contributors;
     // }
-    public int getRetweet_count() {
-        return retweet_count;
-    }
-    public void setRetweet_count(int retweet_count) {
-        this.retweet_count = retweet_count;
-    }
-    public int getFavorite_count() {
-        return favorite_count;
-    }
-    public void setFavorite_count(int favorite_count) {
-        this.favorite_count = favorite_count;
-    }
+    // public int getRetweet_count() {
+    //     return retweet_count;
+    // }
+    // public void setRetweet_count(int retweet_count) {
+    //     this.retweet_count = retweet_count;
+    // }
+    // public int getFavorite_count() {
+    //     return favorite_count;
+    // }
+    // public void setFavorite_count(int favorite_count) {
+    //     this.favorite_count = favorite_count;
+    // }
     public Entities getEntities() {
         return entities;
     }
@@ -241,13 +255,13 @@ public class Tweet {
     @Override
     public String toString() {
         return "Tweet [contributors=" + "" + ", coordinates=" + "coordinates" + ", created_at=" + created_at
-                + ", entities=" + "entities" + ", favorite_count=" + favorite_count + ", favorited=" + "favorited"
+                + ", entities=" + "entities" + ", favorite_count=" + "favorite_count" + ", favorited=" + "favorited"
                 + ", filter_level=" + "filter_level" + ", geo=" + "geo" + ", getIn_reply_to_user_id_str="
                 + "getIn_reply_to_user_id_str "+ ", id=" + id + ", id_str=" + id_str + ", in_reply_to_screen_name="
                 + "in_reply_to_screen_name" + ", in_reply_to_status_id=" + in_reply_to_status_id
                 + ", in_reply_to_status_id_str=" + "in_reply_to_status_id_str" + ", in_reply_to_user_id="
                 + in_reply_to_user_id + ", lang=" + lang + ", place=" + "place" + ", possibly_sensitive="
-                + "possibly_sensitive" + ", retweet_count=" + retweet_count + ", retweeted=" + retweeted + ", source="
+                + "possibly_sensitive" + ", retweet_count=" + "retweet_count" + ", retweeted=" + retweeted + ", source="
                 + "source" + ", symbols=" + "Arrays.toString(symbols)" + ", text=" + text + ", truncated=" + "truncated"
                 + ", urls=" + "Arrays.toString(urls)" + ", user=" + user + "]";
     }
